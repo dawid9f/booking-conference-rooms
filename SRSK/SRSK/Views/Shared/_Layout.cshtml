@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Serwis rezerwacji sal konferencyjnych" />
+    <meta name="keywords" content="sale konferencyjne, konferencje, rezerwacja" />
+    <meta name="author" content="Dawid Florian, Kamil Kiszka" />
+
+    <title>@ViewData["Title"] - Sale Konferencyjne</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="bg-dark">
+    <header>
+        <nav class="navbar bg-dark navbar-dark navbar-expand-md">
+            <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Start" asp-action="Index">SRSK</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mmenu">
+                <ul class="navbar-nav" style="width: 100%; font-size: 19px">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Start" asp-action="Index">O Nas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Start" asp-action="Informacje">Informacje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Rezerwacja" asp-action="Rezerwacja">System Rezerwacji</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Start" asp-action="Kontakt">Kontakt</a>
+                    </li>
+                </ul>
+                <a class="nav-link" asp-area="" asp-controller="Konto" asp-action="Logowanie">
+                    <div style="color: white; border: 2px solid white; padding: 5px; width: max-content; float:right">
+                        Moje Konto
+                    </div>
+                </a>
+            </div>
+            </div>
+        </nav>
+        <div style="width: 100%; height: 400px;  background-image: url(/ZDJ/tloB.png) ; background-position: 50% 50%; background-size: cover; border-bottom: 2px solid white; border-top: 2px solid white ">
+            <div class="container">
+                <div class="col-md-10 col-lg-7 col-xl-6 float-right text-center" style="padding-top: 140px">
+                    <h1 style="background-color: rgba(0,0,0,0.5); padding: 20px; color: white; border-radius: 10px; ">SYSTEM REZERWACJI SAL KONFERENCYJNYCH</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main style="margin-top: 20px; margin-bottom: 20px">
+        @RenderBody()
+    </main>
+    <footer style="border-top: 2px solid white">
+        <div class="container" style="color: white">
+            SRSK - System Rezerwacji Sal Konferencyjnych
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

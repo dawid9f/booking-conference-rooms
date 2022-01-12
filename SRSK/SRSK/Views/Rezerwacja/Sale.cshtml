@@ -1,0 +1,105 @@
+﻿@model IEnumerable<SRSK.Models.SalaModel>
+
+@{
+    ViewData["Title"] = "Sale";
+}
+
+<article class="container bg-light p-5 text-center">
+    <div class="row">
+        <table class="m-auto col-12">
+            <thead class="border-bottom">
+                <tr>
+                    <th colspan="5" class="border-bottom">
+                        <h1>Wybór sali</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Numer sali
+                    </th>
+                    <th>
+                        Ilość miejsc
+                    </th>
+                    <th>
+                        Piętro
+                    </th>
+                    <th>
+                        Informacje
+                    </th>
+                    <th>
+                        Wybierz sale
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="border-bottom">
+                        <td class="col-2">@Html.DisplayFor(modelItem => item.NrSali)</td>
+                        <td class="col-2">@Html.DisplayFor(modelItem => item.IloscMiejsc)</td>
+                        <td class="col-2">@Html.DisplayFor(modelItem => item.Pietro)</td>
+                        <td class="col-2">@Html.DisplayFor(modelItem => item.Informacje)</td>
+                        <td class="col-2">@Html.ActionLink("WYBIERAM", "RezerwowanieKoniec", new { IdB = item.IdBudynek, IdS = item.Id, DataOd = ViewBag.DataOd, DataDo = ViewBag.DataDo })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</article>
+
+
+
+
+@*<h1>Sale</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NrSali)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pietro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IloscMiejsc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Informacje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdBudynek)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NrSali)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pietro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IloscMiejsc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Informacje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdBudynek)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@

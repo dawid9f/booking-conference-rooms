@@ -1,0 +1,33 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@300&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.field-validation-error {
+    color: red;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.input-validation-error {
+    background: pink;
+    border: 1px solid red;
+}
+
+.inputalert {
+    height: 28px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+label {
+    padding-right: 10px;
+}
+
+input {
+    text-align: center;
+}
+

@@ -1,0 +1,34 @@
+﻿@model SRSK.Models.WiadomoscModel
+
+@{
+    ViewData["Title"] = "Dodawanie wpisu";
+}
+
+@using (Html.BeginForm("DodajWpis", "Pracownik"))
+{
+    <article class="container bg-light p-5 text-left">
+        <div class="row">
+            <div class="col-12">
+                <div class="col-8 border float-left">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Pracownik" asp-action="Wpisy">Wpisy</a>
+                </div>
+                <div class="col-4 border float-right">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Pracownik" asp-action="Index">Panel Pracownika</a>
+                </div>
+            </div>
+            <div class="col-12">
+                <h1>Tytuł wpisu:</h1>
+                @Html.ValidationMessageFor(a => a.Tytul)
+                @Html.TextBoxFor(a => a.Tytul, new { @style = "width: inherit;" })
+            </div>
+            <div class="col-12">
+                <h2>Treść wpisu:</h2>
+                @Html.ValidationMessageFor(a => a.Tresc)
+                @Html.TextAreaFor(a => a.Tresc, new { @style = "width: inherit;" })
+            </div>
+            <div class="col-12">
+                <input type="submit" value="Dodaj">
+            </div>
+        </div>
+    </article>
+}

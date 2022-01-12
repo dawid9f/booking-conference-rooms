@@ -1,0 +1,90 @@
+﻿@model IEnumerable<SRSK.Models.WiadomoscModel>
+
+@{
+    ViewData["Title"] = "O Nas";
+}
+
+
+<article class="container bg-light p-5">
+    <div class="row">
+        <div class="col-lg-5" style="margin-top:auto">
+            <div>
+                <h1 class="h2">Czas to pieniądz</h1>
+                <p>Nie trać czasu na szukanie odpowiedniego miejsca na konferencje, w naszym serwisie zaplanujesz ważne spotkanie online.</p>
+            </div>
+            <br />
+            <div>
+                <h4>Aby Zarezerwować sale wystarczy się zarejestrować</h4>
+                <p>Nie czekaj dołącz do nas już dziś i zapomij o długim szukaniu odpowiedniego lokalu.</p>
+            </div>
+            <div class="p-4 text-center">
+                <a asp-area="" asp-controller="Konto" asp-action="Rejestracja">DOŁĄCZ DO NAS</a>
+            </div>
+        </div>
+        <div class="col-lg-7 text-center">
+            <img class="img-fluid p-1" src="../ZDJ/z3.jpg" />
+        </div>
+    </div>
+    <hr />
+    <div class="row  text-center pt-4">
+        <div class="col-12">
+            <h2>Dlaczego właśnie my?</h2>
+        </div>
+        <div class="col-lg-4 pt-4">
+            <h5>NOWOCZESNY SPRZĘT</h5>
+            <p>Nasze sale wyposarzone są w profesjonalne projektory, telewizory, szybki internet również wifi.</p>
+        </div>
+        <div class="col-lg-4 pt-4">
+            <h5>JESTEŚMY W CAŁEJ POLSCE</h5>
+            <p>Obecnie posiadamy ponad 50 sal konferencyjnych w największych miastach w Polsce.</p>
+        </div>
+        <div class="col-lg-4 pt-4">
+            <h5>WYGODA</h5>
+            <p>Rezerwujesz online z dowolnego miejsca na świecie wystarczy się zarejestrować.</p>
+        </div>
+    </div>
+    <hr />
+    <div class="row  text-center pt-4">
+        <div class="col-lg-8">
+            <img class="img-fluid p-1" src="../ZDJ/z2.jpg" />
+        </div>
+        <div class="col-lg-4">
+            <div class="pt-2 pt-lg-5">
+                <h4 class="pt-5">Organizacja Konferencji</h4>
+                <p>Obsługa na najwyższym poziomie, ekspresy do kawy oraz wygodne poczekalnie.</p>
+                <p>Dbamy o komfort i dobre samopoczucie naszych klientów.</p>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <table class="m-auto col-12">
+        <thead>
+            <tr class="border-bottom text-left">
+                <th class="col-9">
+                    <h4>Wpisy:</h4>
+                </th>
+                <th class="col-3 text-right">
+                    <h4>Data</h4>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var w in Model)
+            {
+                <tr class="border-bottom">
+                    <td class="col-9 text-left">
+                        <h5>@Html.DisplayFor(modelItem => w.Tytul)</h5>
+                    </td>
+                    <td class="col-3 text-right">
+                        <h5>@w.Data.ToString("dd.MM.yyyy")</h5>
+                    </td>
+                </tr>
+                <tr class="border-bottom">
+                    <td colspan="2" class="col-12 text-left">
+                        <a href="Pracownik/CzytajWpis/@w.Id" >Czytaj cały wpis</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</article>

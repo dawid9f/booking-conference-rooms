@@ -1,0 +1,54 @@
+﻿@model SRSK.Models.RezerwacjaModel
+
+@{
+    ViewData["Title"] = "Termin";
+}
+
+
+
+
+
+@using (Html.BeginForm("Rezerwacja", "Rezerwacja"))
+{
+    <article class="container bg-light p-5 text-center">
+        <div class="row">
+            <table class="m-auto col-6">
+                <thead class="border-bottom">
+                    <tr>
+                        <th colspan="2" class="border-bottom">
+                            <h1>Wybierz termin</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="inputalert" colspan="2">@ViewBag.Info</td></tr>
+                    <tr>
+                        <td>
+                            Początek rezerwacji:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(a => a.DataOd, new { @type = "datetime-local" })
+                        </td>
+                    </tr>
+                    <tr><td class="inputalert" colspan="2"></td></tr>
+                    <tr>
+                        <td>
+                            Koniec rezerwacji:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(a => a.DataDo, new { @type = "datetime-local" })
+                        </td>
+                    </tr>
+                    <tr><td class="inputalert" colspan="2"></td></tr>
+                    <tr>
+                        <td class="inputalert border-top" colspan="2">
+                            <br /><input type="submit" value="Wybierz">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @Html.TextBoxFor(a => a.IdSala, new { @style = "display: none" })
+        @Html.TextBoxFor(a => a.IdKonto, new { @style = "display: none" })
+    </article>
+}

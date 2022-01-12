@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "DodajAwarie";
+}
+
+@using (Html.BeginForm("DodajAwarie", "Pracownik"))
+{
+    <article class="container bg-light p-5 text-left">
+        <div class="row">
+            <div class="col-12">
+                <div class="col-8 border float-left">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Pracownik" asp-action="Awarie">Awarie</a>
+                </div>
+                <div class="col-4 border float-right">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Pracownik" asp-action="Index">Panel Pracownika</a>
+                </div>
+            </div>
+            <div class="col-12 p-2">
+                <h1>Dodawanie awari</h1>
+            </div>
+            <div class="col-12 p-2">
+                <select name="IdS" size="20" style="width: inherit;">
+                    @foreach (var b in ViewBag.budynki)
+                    {
+                        string nazwa = "| Id budynku: " + b.Id + " | Symbol: " + b.Symbol + " | Adres: " + b.Miasto + " ul. " + b.Adres;
+                         
+                        <optgroup label="@nazwa">
+                            @foreach (var s in ViewBag.sale)
+                            {
+                                if ( s.IdBudynek == b.Id)
+                                {
+                                    string nazwaS = "Id sali: " + s.Id + " - nr: " + s.NrSali + " - Miejsca: " + s.IloscMiejsc + " - Piętro: " + s.Pietro;
+
+                                    <option value=@s.Id>@nazwaS</option>
+                                }
+                            }
+                        </optgroup>
+                    }
+                </select>
+            </div>
+            <div class="col-12 text-center p-2">
+                <div class="col-6 float-left">
+                    OD: 
+                    <input name="DataOd" type="datetime-local" />
+                </div>
+                <div class="col-6 float-right">
+                    DO:
+                    <input name="DataDo" type="datetime-local" />
+                </div>
+            </div>
+            <div class="col-12 p-2 text-left">
+                <h5>Informacje:</h5>
+            </div>
+            <div class="col-12 text-center p-2">
+                <textarea name="Informacje" style="width: inherit;"></textarea>
+            </div>
+            <div class="col-12 text-right">
+                <input type="submit" value="Dodaj">
+            </div>
+        </div>
+    </article>
+}
+

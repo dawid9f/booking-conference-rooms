@@ -1,0 +1,21 @@
+﻿@model SRSK.Models.WiadomoscModel
+
+@{
+    ViewData["Title"] = Model.Tytul;
+}
+
+<article class="container bg-light p-5">
+    <div class="row pt-4">
+        <div class="col-12">
+            <h1>@Html.DisplayFor(model => model.Tytul)</h1>
+            <hr />
+        </div>
+        <div class="col-12">
+            @Html.DisplayFor(model => model.Tresc)
+            <hr />
+        </div>
+        <div class="col-12">
+            @Model.Data.ToString("dd.MM.yyyy")
+        </div>
+    </div>
+</article>

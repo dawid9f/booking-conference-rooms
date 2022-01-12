@@ -1,0 +1,120 @@
+﻿@model SRSK.Models.KontoModel
+
+@{
+    ViewData["Title"] = "Logowanie";
+}
+
+@using (Html.BeginForm("Logowanie", "Konto"))
+{
+    <article class="container bg-light p-5 text-center">
+        <div class="row">
+            <table class="m-auto col-5">
+                <thead class="border-bottom">
+                    <tr>
+                        <th colspan="2" class="border-bottom">
+                            <h1>Logowanie</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="inputalert" colspan="2">
+                            @ViewBag.Info
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(a => a.Email)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(a => a.Email)
+                        </td>
+                    </tr>
+                    <tr><td class="inputalert border-bottom" colspan="2"></td></tr>
+                    <tr><td class="inputalert" colspan="2"></td></tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(a => a.HasloHASH)
+                        </td>
+                        <td>
+                            @Html.PasswordFor(a => a.HasloHASH)
+                        </td>
+                    </tr>
+                    <tr><td class="inputalert border-bottom" colspan="2"> </td></tr>
+                    <tr>
+                        <td class="inputalert" colspan="2">
+                            <br /><input type="submit" value="Zaloguj się"><br />@Html.ActionLink("Zarejestruj się", "Rejestracja")<br />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<article class="container bg-light p-5">
+        <div class="row  text-center pt-4">
+            <div class="col-12">
+                <h3>Logowanie</h3>
+            </div>
+            <div class="col-12">
+                @using (Html.BeginForm("Logowanie", "Konto"))
+                {
+                    <table class="m-auto">
+                        <tbody>
+                            <tr>
+                                <td class="inputalert" colspan="2">
+                                    @ViewBag.Info
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(a => a.Email)
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(a => a.Email)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="inputalert" colspan="2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(a => a.HasloHASH)
+                                </td>
+                                <td>
+                                    @Html.PasswordFor(a => a.HasloHASH)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="inputalert" colspan="2">
+                                    <br /><input type="submit" value="Zaloguj się"><br />@Html.ActionLink("Zarejestruj się", "Rejestracja")<br />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </article>*@

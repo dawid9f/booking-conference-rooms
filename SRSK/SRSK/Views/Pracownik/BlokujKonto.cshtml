@@ -1,0 +1,107 @@
+﻿@model SRSK.Models.BlokadaModel
+
+@{
+    ViewData["Title"] = "BlokujKonto";
+}
+
+
+
+@using (Html.BeginForm("BlokujKonto", "Pracownik"))
+{
+    <article class="container bg-light p-5 text-center">
+        <div class="row">
+            <table class="m-auto col-6">
+                <thead class="border-bottom">
+                    <tr>
+                        <th colspan="2" class="border p-1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pracownik" asp-action="Index">Panel Pracownika</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="border-bottom">
+                            <h1>Blokowanie konta</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="inputalert" colspan="2">
+                            @ViewBag.Info
+                            @Html.ValidationMessageFor(a => a.DataDo)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Do kiedy blokada:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(a => a.DataDo, new { @type = "datetime-local" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="inputalert" colspan="2">
+                            @Html.ValidationMessageFor(a => a.Informacje)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Informacje:
+                        </td>
+                        <td>
+                            @Html.TextAreaFor(a => a.Informacje, new { @style = "width: inherit;" })
+                        </td>
+                    </tr>
+                    <tr><td class="inputalert" colspan="2"></td></tr>
+                    <tr>
+                        <td class="inputalert border-top" colspan="2">
+                            <br /><input type="submit" value="Blokuj">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @Html.TextBoxFor(a => a.Id, new { @style = "display: none" })
+        @Html.TextBoxFor(a => a.IdKonto, new { @style = "display: none" })
+    </article>
+}
+
+
+@*<h1>BlokujKonto</h1>
+
+    <h4>BlokadaModel</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="BlokujKonto">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Id" class="control-label"></label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdKonto" class="control-label"></label>
+                    <input asp-for="IdKonto" class="form-control" />
+                    <span asp-validation-for="IdKonto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataDo" class="control-label"></label>
+                    <input asp-for="DataDo" class="form-control" />
+                    <span asp-validation-for="DataDo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Informacje" class="control-label"></label>
+                    <input asp-for="Informacje" class="form-control" />
+                    <span asp-validation-for="Informacje" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
+
