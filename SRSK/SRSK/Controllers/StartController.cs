@@ -20,7 +20,7 @@ namespace SRSK.Controllers
             List<WiadomoscModel> wiadomosci = new List<WiadomoscModel>();
             BazaDanych baza = new BazaDanych();
             baza.Polaczenie.Open();
-            SqlDataReader r = baza.WykonajPobierz("SELECT TOP (10) * FROM [srskBaza].[dbo].[Wiadomosc] ORDER BY [Data] DESC");
+            SqlDataReader r = baza.WykonajPobierz("SELECT TOP (10) * FROM [srskBaza].[dbo].[Wiadomosc] ORDER BY [Data] DESC;");
             while(r.Read())
             {
                 wiadomosci.Add(new WiadomoscModel() { 
